@@ -3,6 +3,7 @@ import axios from "axios";
 const state = () => ({
   wordsList: [],
   favorites: [],
+  singleWord: {},
   currentRadio: "none",
   favoriteWord: ""
 })
@@ -34,6 +35,9 @@ const actions = {
   },
   changeFavoriteWord({ commit }, value) {
     commit("SET_FAVORITE_WORD", value);
+  },
+  addSingleWord({ commit }, value) {
+    commit("SET_SINGLE_WORD", value);
   }
 };
 const mutations = {
@@ -52,6 +56,10 @@ const mutations = {
   SET_FAVORITE_WORD(state, word) {
     state.favoriteWord = word;
   },
+  SET_SINGLE_WORD(state, value) {
+    state.singleWord = value;
+  },
+
 };
 const getters = {
   getWordByRadio: state => {

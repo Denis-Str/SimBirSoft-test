@@ -3,7 +3,8 @@
     .word__name {{ word }}
   li.word-component(v-else)
     .word__inner
-      .word__name {{ word.hwi.hw }}
+      router-link(:to="{name: 'SingleWord', params: {id: word.hwi.hw , word}}")
+        .word__name {{ word.hwi.hw }}
       .word__fl {{ word.fl }}
       .word__shortdef {{ word.shortdef[0] }}
     b-icon.favorites(
